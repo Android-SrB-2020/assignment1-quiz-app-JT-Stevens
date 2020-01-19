@@ -11,44 +11,69 @@
             type="com.nbcc.assignment1.Question" />
     </data>
 
-    <LinearLayout
+        <!--@{@string/question_string(Question.Id)}-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
+
 
         <TextView
             android:id="@+id/question_string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={question.Id}" />
+            android:text="@={question.id}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003"
+            tools:text="The Questions Go Here!" />
 
         <Button
             android:id="@+id/true_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/true_button_text" />
-
-        <Button
-            android:id="@+id/false_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/false_button_text" />
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/true_button_text"
+            app:layout_constraintEnd_toStartOf="@+id/false_button"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_string" />
 
         <ImageButton
             android:id="@+id/previous_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/previous_button_desc"
-            android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            app:layout_constraintEnd_toEndOf="@+id/true_button"
+            app:layout_constraintTop_toBottomOf="@+id/true_button" />
 
         <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/next_button_desc"
-            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+            app:layout_constraintStart_toStartOf="@+id/false_button"
+            app:layout_constraintTop_toBottomOf="@+id/false_button" />
 
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/false_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/false_button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_string" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -24,5 +24,6 @@
     <string name="next_button_desc">Next Button</string>
     <string name="true_button_text">TRUE</string>
     <string name="false_button_text">FALSE</string>
+    <string name="question_string" formatted="false">%s </string>
 
 </resources>
